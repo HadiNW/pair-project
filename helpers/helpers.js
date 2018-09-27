@@ -1,12 +1,13 @@
-class Helpers{
-    static gettrue(val){
+class Helpers {
+
+    static getTrue (val) {
         if (val === true) {
             return 'Approved'
         }
-        return 'Rejected'
+        return 'Not Aprroved'
     }
 
-    static getDateF(val){
+    static getDateF(val) {
         return val.getFullYear();
     }
 }

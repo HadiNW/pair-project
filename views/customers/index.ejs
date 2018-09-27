@@ -14,7 +14,7 @@
           <h2 class="my-4">Book Categories</h2>
           <div class="list-group">
             <% for (let i = 0; i < category.length; i++) {%>
-              <a href="/?category=<%=category[i].id%>" class="list-group-item"><%= category[i].name%></a>
+              <a href="/sort/?cat=<%=category[i].id%>" class="list-group-item"><%= category[i].name%></a>
               <%}%>
              
           </div>
@@ -63,8 +63,11 @@
                   <h5>Rp. <%= book[i].price%></h5>
                   <p class="card-text"><%= book[i].description%></p>
                 </div>
-                <input type="text" placeholder="Beli berapa">
-                <button>BUY</button>
+                <form action="/transaction/" method="post">
+                  <input name="qty" type="text" placeholder="Qty ...">
+                  <input type="hidden" name="book" value="<%= book[i].id%>" id="">
+                  <button type="submit">Buy Now</button>
+              </form>
               </div>
             </div>   
              

@@ -43,12 +43,12 @@
                         <td><%= data[i].Customer.name%></td>
                         <td><%= data[i].amount%></td>
                         <td><%= data[i].createdAt%></td>
-                        <td><%= data[i].isApproved%></td>
+                        <td><%= helpers.getTrue(data[i].isApproved)%></td>
                         <td><%= data[i].transfer%></td>
                        
                         <td>
-                            <a href="/admin/topups/<%= data[i].id %>/?approve=true" class="btn btn-primary">Approve</a>
-                            <a href="/admin/topups/<%= data[i].id %>/?approve=false %>" class="btn btn-danger">Reject</a>
+                            <a href="/admin/topups/<%= data[i].id %>/approve/<%= data[i].Customer.id%>" class="btn btn-primary">Approve</a>
+                            <!-- <a href="/admin/topups/<%= data[i].id %>/reject/<%= data[i].Customer.id %>" class="btn btn-danger">Reject</a> -->
                         </td>                       
                       
                       </tr>
