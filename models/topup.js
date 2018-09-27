@@ -2,7 +2,10 @@
 module.exports = (sequelize, DataTypes) => {
   const TopUp = sequelize.define('TopUp', {
     CustomerId: DataTypes.INTEGER,
-    amount: DataTypes.INTEGER,
+    amount: {
+      type: DataTypes.INTEGER,
+      isNumeric: true
+    },
     approvedBy: DataTypes.INTEGER,
     isApproved: DataTypes.BOOLEAN,
     transfer: DataTypes.TEXT
