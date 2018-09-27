@@ -48,27 +48,27 @@ router.get('/', (req, res) => {
     console.log(Models)
 
 
-    sequelize.query(`SELECT * FROM "Books" WHERE `, { raw: true}).spread(users => {
-        res.send(users)
-    })
-    .catch(err => {
-        console.log(err)
-    })
+    // sequelize.query(`SELECT * FROM "Books", "Category" WHERE `, { raw: true}).spread(users => {
+    //     res.send(users)
+    // })
+    // .catch(err => {
+    //     console.log(err)
+    // })
 
-    // Models.Book.findAll(
-    //     {   
-    //         include: [{model: Models.Category}],
-    //         order: [['id', 'asc']],
+    Models.Book.findAll(
+        {   
+            include: [{model: Models.Category}],
+            order: [['id', 'asc']],
 
-    //     }
-    //     )
-    //     .then((books) => {
-    //         // res.render(`${dir}/`, {books: books})
-    //         res.send(books)
-    //     })
-    //     .catch(err => {
-    //         res.send(err.message)
-    //     })
+        }
+        )
+        .then((books) => {
+            res.render(`${dir}/`, {books: books})
+            // res.send(books)
+        })
+        .catch(err => {
+            res.send(err.message)
+        })
     
 })
 

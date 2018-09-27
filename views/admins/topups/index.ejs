@@ -27,6 +27,8 @@
                         <th>No</th>      
                         <th scope="col">ID</th>                       
                         <th scope="col">Customer</th>
+                        <th>Amount</th>
+                        <th>Date</th>
                         <th>Approved ?</th>
                         <th>Image</th>
                         <th scope="col">Action</th>
@@ -38,7 +40,9 @@
                       <tr>
                         <th scope="row"><%= i+1 %></th>
                         <td><%= data[i].id%></td>
-                        <td><%= data[i].CustomerId%></td>
+                        <td><%= data[i].Customer.name%></td>
+                        <td><%= data[i].amount%></td>
+                        <td><%= data[i].createdAt%></td>
                         <td><%= data[i].isApproved%></td>
                         <td><%= data[i].transfer%></td>
                        
