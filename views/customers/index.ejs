@@ -55,7 +55,7 @@
           <% for (let i = 0; i < book.length; i++) { %>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="https://images-eu.ssl-images-amazon.com/images/I/51%2BTGlsv94L.jpg" alt=""></a>
+                <a href="#"><img class="card-img-top" src="http://localhost:8000/static/uploads/<%= book[i].image%>" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="#"><%= book[i].name%></a>
@@ -63,10 +63,11 @@
                   <h5>Rp. <%= book[i].price%></h5>
                   <p class="card-text"><%= book[i].description%></p>
                 </div>
-               
+                <input type="text" placeholder="Beli berapa">
+                <button>BUY</button>
               </div>
-            </div>    
-
+            </div>   
+             
             <%}%>     
            
 
