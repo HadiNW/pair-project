@@ -17,38 +17,33 @@
           </div>
     </div>
     <div class="container md-3">
-            <a href="/categories/add"  class="btn btn-success">Add Category </a>
+            <a href="/admin/categories/add"  class="btn btn-success">Add Category </a>
     </div> 
     <br>
     <div class="container">
             <table class="table">
-                    <thead> <% songs = ['']%>
-                      <tr>
-                       
-                        <th scope="col">Genre</th>
-                        <th scope="col">Genre</th>
-                        <th scope="col">Genre</th>
-                        <th scope="col">Genre</th>
-                        <th scope="col">Genre</th>
-                        <th scope="col">released Year</th>
+                    <thead>
+                      <tr>                 
+                        <th>No</th>      
+                        <th scope="col">ID</th>                       
+                        <th scope="col">Name</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
                       </tr>
                     </thead>
                     <tbody>    
-                    <% for (let i = 0; i < songs.length; i++) {%>                 
+                    <% for (let i = 0; i < category.length; i++) {%>                 
                       <tr>
                         <th scope="row"><%= i+1 %></th>
-                        <td><%= songs[i].title%></td>
-                        <td><%= songs[i].singerName%></td>
-                        <td><%= songs[i].rating%></td>
-                        <td><%= songs[i].genre%></td>
-                        <td><%= songs[i].releasedYear%></td>
-                        <td><a href="/admin/categories/<%='id' %>/edit" class="btn btn-primary">Edit</a></td>
+                        <td><%= category[i].id%></td>
+                        <td><%= category[i].name%></td>
+                       
+                        <td><a href="/admin/categories/<%= category[i].id %>/edit" class="btn btn-primary">Edit</a></td>                       
                         <td>                           
                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
                                 Delete
                             </button>
+                             <a href="/admin/categories/<%= category[i].id %>/delete %>" class="btn btn-danger">Delete</a>
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -63,7 +58,7 @@
                                     </div>
                                     <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-danger">Delete</button>
+                                    <a href="/admins/categories/<%= category[i].id %>/delete %>" class="btn btn-danger">Delete</a>
                                     </div>
                                 </div>
                                 </div>
