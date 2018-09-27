@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   TopUp.associate = function(models) {
     // associations can be defined here
+    TopUp.belongsTo(models.Customer)
   };
   return TopUp;
 };
