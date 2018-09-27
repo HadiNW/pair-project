@@ -36,9 +36,9 @@
                     <% for (let i = 0; i < books.length; i++) {%>                 
                       <tr>
                         <th scope="row"><%= i+1 %></th>
-                        <td><%= books[i].id%></td>
+                        <td><%= books[i].id%></td>                       
                         <td><%= books[i].name%></td>
-                        <td><%= books[i].name%></td>
+                        <td><%= books[i].Category.name%></td>
                        
                         <td><a href="/admin/books/<%= books[i].id %>/edit" class="btn btn-primary">Edit</a></td>                       
                         <td>                           

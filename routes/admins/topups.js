@@ -5,9 +5,15 @@ const url = '/admin/topups'
 const dir = 'admins/topups'
 
 router.get('/', (req, res) => {
-    Models.TopUp.findAll({order: [['isApproved', 'asc']]})
+    Models.TopUp.findAll(
+        {
+            include: [{model: Models.Customer}],
+            order: [['isApproved', 'asc']]
+        }
+        )
         .then((data) => {
             res.render(`${dir}/`, {data: data})
+            // res.send(data)
         })
 })
 

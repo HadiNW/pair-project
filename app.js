@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 const path = require('path')
 
 
+// app.locals.helpers = require()
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
 app.use('/admin', adminRouter);
