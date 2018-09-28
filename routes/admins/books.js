@@ -45,16 +45,12 @@ const storage = multer.diskStorage({
 
 
 router.get('/', (req, res) => {
-    console.log(Models)
-
-
     // sequelize.query(`SELECT * FROM "Books", "Category" WHERE `, { raw: true}).spread(users => {
     //     res.send(users)
     // })
     // .catch(err => {
     //     console.log(err)
     // })
-
     Models.Book.findAll(
         {   
             include: [{model: Models.Category}],
@@ -86,7 +82,21 @@ router.get('/add', (req, res) => {
 
 
 router.get('/:id/edit', (req, res) => {
-
+    let category = null
+    Models.Category.findAll()
+        .then((cat) => {
+            // res.send(category)
+            category = cat
+            return  Models.Book.findById(req.params.id)
+        })   
+        .then((book) => {
+            // res.send(category)
+            res.render('admins/books/edit', {book: book, category: category})
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    
 })
 
 

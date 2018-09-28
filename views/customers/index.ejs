@@ -64,7 +64,7 @@
                   <p class="card-text"><%= book[i].description%></p>
                 </div>
                 <form action="/transaction/" method="post">
-                  <input name="qty" type="text" placeholder="Qty ...">
+                  <input name="qty" type="number" placeholder="Qty ..." required>
                   <input type="hidden" name="book" value="<%= book[i].id%>" id="">
                   <button type="submit">Buy Now</button>
               </form>

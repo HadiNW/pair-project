@@ -14,11 +14,18 @@
 
       <form method="post" action="/register">
        <center><h2 class="form-signin-heading">Register</h2></center> <br>
+       <label for="inputEmail" class="sr-only">Name</label>
+       <input type="text" id="inputEmail" class="form-control" placeholder="Name" name="name"><br>
+
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="username" autofocus>
+        <input type="text" id="inputEmail" class="form-control" placeholder="email" name="email">
+        
+        <label for="inputEmail" class="sr-only">address</label><br>
+        <input type="text" id="inputEmail" class="form-control" placeholder="address" name="address">
+
         <label for="inputPassword" class="sr-only">Password</label><br>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" ><br>       
-      
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password"  name="password"><br>  
+
         <button type="submit" class="btn btn-lg btn-info btn-block" >Register</button>
         <a href="/login" class="btn btn-lg btn-primary btn-block" >Sign in</a>
       </form>

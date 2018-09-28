@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
   Book.associate = function(models) {
     // associations can be defined here
     Book.belongsTo(models.Category)
+    Book.belongsToMany(models.Transaction, { through: models.Transaction_Detail })
   };
   return Book;
 };

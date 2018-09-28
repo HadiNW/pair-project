@@ -29,8 +29,8 @@
                         <th scope="col">Customer</th>
                         <th>Amount</th>
                         <th>Date</th>
-                        <th>Approved ?</th>
-                        <th>Image</th>
+                        <th>Approved</th>
+                        <th>Transfer</th>
                         <th scope="col">Action</th>
                        
                       </tr>
@@ -44,7 +44,13 @@
                         <td><%= data[i].amount%></td>
                         <td><%= data[i].createdAt%></td>
                         <td><%= helpers.getTrue(data[i].isApproved)%></td>
-                        <td><%= data[i].transfer%></td>
+                        <td>
+                          ​<picture>
+                              <!-- image-1538052721979.jpeg -->
+                            <source srcset="http://localhost:8000/static/uploads/<%= data[i].transfer%>" type="image/svg+xml">
+                            <img src="http://localhost:8000/static/uploads/<%= data[i].transfer%>" class="img-fluid img-thumbnail" alt="...">
+                          </picture>
+                        </td>
                        
                         <td>
                             <a href="/admin/topups/<%= data[i].id %>/approve/<%= data[i].Customer.id%>" class="btn btn-primary">Approve</a>
