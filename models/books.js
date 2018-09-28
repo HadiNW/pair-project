@@ -1,11 +1,26 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Book = sequelize.define('Book', {
-    name: DataTypes.STRING,
-    price: DataTypes.INTEGER,
+    name: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      validate: {
+        notEmpty: true
+      }
+    },
     CategoryId: DataTypes.INTEGER,
     description: DataTypes.TEXT,
-    stock: DataTypes.INTEGER,
+    stock:  {
+      type: DataTypes.INTEGER,
+      validate: {
+        notEmpty: true
+      }
+    },
     image: DataTypes.TEXT
   }, {});
   Book.associate = function(models) {

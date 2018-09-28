@@ -4,8 +4,11 @@ const router = express.Router()
 
 
 router.get('/', (req, res) => {
-    res.render('customers/login')
+    res.render('customers/login', {msg: false})
 })
+
+
+
 
 
 module.exports = router

@@ -3,12 +3,17 @@ module.exports = (sequelize, DataTypes) => {
   const Admin = sequelize.define('Admin', {
     username: {
       type: DataTypes.STRING,
-      notEmpty: true
+      validate: {
+        notEmpty: true
+      }
+     
     },
     password: {
       type: DataTypes.STRING,
-      notEmpty: true,
-      isAlphaNumeric: true
+      validate: {
+        notEmpty: true
+      }
+      
     }
   }, {});
   Admin.associate = function(models) {

@@ -94,11 +94,22 @@ router.post('/register', (req, res) => {
         password: req.body.password
     })
     .then((customer) => {
-        res.send(customer)
+        res.render('customers/login', {msg: 'Register success please login'})
     })
     .catch((err) => {
         res.send(err)
     })
+})
+
+router.post('/login', (req, res) => {
+    // res.send(req.body)
+    Models.Customer.findOne({where:{email: req.body.email}})
+        .then((user) => {
+            res.send(user)
+        })
+        .catch(err => {
+            res.send(err)
+        })
 })
 
 
